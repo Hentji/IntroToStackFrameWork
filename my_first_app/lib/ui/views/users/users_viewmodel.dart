@@ -34,11 +34,7 @@ class UsersViewModel extends BaseViewModel {
   }
 
   getAddress(index) {
-    return users[index].address.suite +
-        users[index].address.street +
-        users[index].address.suite +
-        users[index].address.city +
-        users[index].address.zipcode;
+    return '${users[index].address.suite} ${users[index].address.street} ${users[index].address.suite} ${users[index].address.city} ${users[index].address.zipcode}';
   }
 
   getPhone(index) {

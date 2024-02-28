@@ -9,4 +9,8 @@ class UsersViewModel extends BaseViewModel {
   navigateToHomeView() async {
     await _navigationService.navigateToHomeView();
   }
+
+  navigateBack() {
+    _navigationService.back();
+  }
 }

@@ -34,7 +34,7 @@ class UsersView extends StackedView<UsersViewModel> {
                     verticalSpaceMedium,
                     MaterialButton(
                       color: Colors.black,
-                      onPressed: () => viewModel.navigateToHomeView(),
+                      onPressed: () => viewModel.navigateBack(),
                       child: const Text(
                         'Home Page',
                         style: TextStyle(color: Colors.white),

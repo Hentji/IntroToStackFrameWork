@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 //import 'package:my_first_app/ui/views/home/home_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 import 'package:my_first_app/ui/common/ui_helpers.dart';
@@ -49,7 +50,46 @@ class UsersView extends StackedView<UsersViewModel> {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    Text(viewModel.formatUsers()),
+                    SizedBox(
+                      height: 500,
+                      child: ListView.builder(
+                        itemCount: viewModel.users.length,
+                        itemBuilder: (context, index) => ListTile(
+                          title: Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      viewModel.getId(index) +
+                                          '  ' +
+                                          viewModel.getName(index),
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      viewModel.getAddress(index),
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    Text(
+                                      viewModel.getEmail(index) +
+                                          viewModel.getPhone(index),
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ],

@@ -1,3 +1,4 @@
+import 'package:my_first_app/models/user.dart';
 import 'package:my_first_app/services/users_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:my_first_app/app/app.locator.dart';
@@ -7,9 +8,9 @@ class UsersViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _usersService = locator<UsersService>();
 
-  List<String> _users = [];
+  List<User> _users = [];
 
-  List<String> get users => _users;
+  List<User> get users => _users;
 
   navigateBack() {
     _navigationService.back();
@@ -20,7 +21,27 @@ class UsersViewModel extends BaseViewModel {
     rebuildUi();
   }
 
-  formatUsers() {
-    return users.join('\n');
+  getName(index) {
+    return users[index].name;
+  }
+
+  getId(index) {
+    return '${users[index].id}';
+  }
+
+  getEmail(index) {
+    return users[index].email;
+  }
+
+  getAddress(index) {
+    return users[index].address.suite +
+        users[index].address.street +
+        users[index].address.suite +
+        users[index].address.city +
+        users[index].address.zipcode;
+  }
+
+  getPhone(index) {
+    return users[index].phone;
   }
 }

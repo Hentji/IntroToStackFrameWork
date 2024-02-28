@@ -4,13 +4,15 @@ import 'package:my_first_app/ui/views/home/home_view.dart';
 import 'package:my_first_app/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:my_first_app/ui/views/users/users_view.dart';
 // @stacked-import
 
 @StackedApp(
   routes: [
     MaterialRoute(page: HomeView),
     MaterialRoute(page: StartupView),
-    // @stacked-route
+    MaterialRoute(page: UsersView),
+// @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: BottomSheetService),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:my_first_app/ui/views/home/home_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 import 'package:my_first_app/ui/common/ui_helpers.dart';
 
@@ -40,6 +41,15 @@ class UsersView extends StackedView<UsersViewModel> {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
+                    MaterialButton(
+                      color: Colors.black,
+                      onPressed: () => viewModel.getUsersFromService(),
+                      child: const Text(
+                        'Get Users',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    Text(viewModel.formatUsers()),
                   ],
                 ),
               ],
